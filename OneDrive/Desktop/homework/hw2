@@ -1,0 +1,173 @@
+### 1. Swap Two Numbers
+csharp
+using System;
+
+class Program {
+    static void Main() {
+        int num1, num2, temp;
+
+        Console.Write("Enter first number: ");
+        num1 = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter second number: ");
+        num2 = Convert.ToInt32(Console.ReadLine());
+
+        // Swapping
+        temp = num1;
+        num1 = num2;
+        num2 = temp;
+
+        Console.WriteLine($"After swap: num1 = {num1}, num2 = {num2}");
+    }
+}
+```
+
+### 2. Display Number Four Times
+csharp
+using System;
+
+class Program {
+    static void Main() {
+        Console.Write("Enter a digit: ");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        // Using Console.Write and format {0}
+        Console.WriteLine("{0} {0} {0} {0}", number);
+        Console.WriteLine("{0}{0}{0}{0}", number);
+        Console.WriteLine("{0} {0} {0} {0}", number);
+        Console.WriteLine("{0}{0}{0}{0}", number);
+    }
+}
+
+
+### 3. Display Day Name Based on Integer
+```csharp
+using System;
+
+class Program {
+    static void Main() {
+        Console.Write("Enter a day number (1-7): ");
+        int dayNumber = Convert.ToInt32(Console.ReadLine());
+
+        switch (dayNumber) {
+            case 1:
+                Console.WriteLine("Sunday");
+                break;
+            case 2:
+                Console.WriteLine("Monday");
+                break;
+            case 3:
+                Console.WriteLine("Tuesday");
+                break;
+            case 4:
+                Console.WriteLine("Wednesday");
+                break;
+            case 5:
+                Console.WriteLine("Thursday");
+                break;
+            case 6:
+                Console.WriteLine("Friday");
+                break;
+            case 7:
+                Console.WriteLine("Saturday");
+                break;
+            default:
+                Console.WriteLine("Invalid input");
+                break;
+        }
+    }
+}
+```
+
+### Arrays
+---
+
+### 1. Array Operations (Average, Min, Max)
+```csharp
+using System;
+
+class Program {
+    static void Main() {
+        int[] numbers = {12, 5, 8, 21, 18};
+        int sum = 0, min = numbers[0], max = numbers[0];
+
+        for (int i = 0; i < numbers.Length; i++) {
+            sum += numbers[i];
+            if (numbers[i] < min) min = numbers[i];
+            if (numbers[i] > max) max = numbers[i];
+        }
+
+        Console.WriteLine($"Average: {sum / (double)numbers.Length}");
+        Console.WriteLine($"Minimum: {min}");
+        Console.WriteLine($"Maximum: {max}");
+    }
+}
+```
+
+### 2. Marks Operations (Total, Average, Min, Max, Ascending, Descending) 
+csharp
+using System;
+
+class Program {
+    static void Main() {
+        int[] marks = new int[10];
+        Console.WriteLine("Enter 10 marks:");
+        for (int i = 0; i < 10; i++) {
+            marks[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        // Total, Average, Min, Max
+        int total = 0, min = marks[0], max = marks[0];
+        for (int i = 0; i < marks.Length; i++) {
+            total += marks[i];
+            if (marks[i] < min) min = marks[i];
+            if (marks[i] > max) max = marks[i];
+        }
+
+        double average = total / 10.0;
+        Console.WriteLine($"Total: {total}");
+        Console.WriteLine($"Average: {average}");
+        Console.WriteLine($"Minimum: {min}");
+        Console.WriteLine($"Maximum: {max}");
+
+        // Sort marks in ascending order
+        Array.Sort(marks);
+        Console.WriteLine("Marks in Ascending Order:");
+        foreach (int mark in marks) {
+            Console.Write(mark + " ");
+        }
+
+        // Sort marks in descending order
+        Array.Reverse(marks);
+        Console.WriteLine("\nMarks in Descending Order:");
+        foreach (int mark in marks) {
+            Console.Write(mark + " ");
+        }
+    }
+}
+
+
+### 3. Copy Elements of One Array to Another
+csharp
+using System;
+
+class Program {
+    static void Main() {
+        int[] array1 = {1, 2, 3, 4, 5};
+        int[] array2 = new int[array1.Length];
+
+        for (int i = 0; i < array1.Length; i++) {
+            array2[i] = array1[i];
+        }
+
+        Console.WriteLine("Array 1:");
+        foreach (int num in array1) {
+            Console.Write(num + " ");
+        }
+
+        Console.WriteLine("\nArray 2 (Copy):");
+        foreach (int num in array2) {
+            Console.Write(num + " ");
+        }
+    }
+}
